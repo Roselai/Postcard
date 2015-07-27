@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    //Connecting storyboard elements
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
@@ -27,13 +28,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func sendMailButtonPressed(sender: UIButton) {
+        //Code will execute when button pressed
         messageLabel.hidden = false
         messageLabel.text = enterMessageTextField.text
         messageLabel.textColor = UIColor.redColor()
         
         enterMessageTextField.text = ""
+        //hide keyboard
         enterMessageTextField.resignFirstResponder()
         
+        //change the button text
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
     }
    
